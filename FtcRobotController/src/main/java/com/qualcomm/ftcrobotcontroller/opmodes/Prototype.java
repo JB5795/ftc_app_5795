@@ -37,10 +37,10 @@ public class Prototype extends OpMode {
     final static double RIGHT_MAX_RANGE  = 0.85;
     final static double BELT_MIN_RANGE  = 0.20;
     final static double BELT_MAX_RANGE  = 0.7;
-    final static double CAMLEFT_MAX_RANGE = .1;
+    final static double CAMLEFT_MAX_RANGE = .9;
     final static double CAMLEFT_MIN_RANGE = 0;
-    final static double CAMRIGHT_MAX_RANGE = .1;
-    final static double CAMRIGHT_MIN_RANGE = 0;
+    final static double CAMRIGHT_MAX_RANGE = 0;
+    final static double CAMRIGHT_MIN_RANGE = .9;
 
     public void init (){
         fright = hardwareMap.dcMotor.get("fright");
@@ -58,7 +58,10 @@ public class Prototype extends OpMode {
         beltPosition=.5;
         camleftPosition= 0;
         camrightPosition=0;
+        camleftPosition= 0; //edit
+        camrightPosition=0; //edit
     }
+
 
     public void loop () {
         fright.setPower(-gamepad1.right_stick_y);
