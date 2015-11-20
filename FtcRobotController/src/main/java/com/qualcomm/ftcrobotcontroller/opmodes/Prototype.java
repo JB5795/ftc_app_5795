@@ -37,10 +37,10 @@ public class Prototype extends OpMode {
     final static double RIGHT_MAX_RANGE  = 0.85;
     final static double BELT_MIN_RANGE  = 0.20;
     final static double BELT_MAX_RANGE  = 0.7;
-    final static double CAMLEFT_MAX_RANGE = .9;
-    final static double CAMLEFT_MIN_RANGE = .3;
-    final static double CAMRIGHT_MAX_RANGE = .9;
-    final static double CAMRIGHT_MIN_RANGE = .3;
+    final static double CAMLEFT_MAX_RANGE = .1;
+    final static double CAMLEFT_MIN_RANGE = 0;
+    final static double CAMRIGHT_MAX_RANGE = .1;
+    final static double CAMRIGHT_MIN_RANGE = 0;
 
     public void init (){
         fright = hardwareMap.dcMotor.get("fright");
@@ -56,8 +56,8 @@ public class Prototype extends OpMode {
         leftPosition=.9;
         rightPosition=.1;
         beltPosition=.5;
-        camleftPosition= .3; //edit
-        camrightPosition=.3; //edit
+        camleftPosition= 0;
+        camrightPosition=0;
     }
 
     public void loop () {
@@ -95,17 +95,17 @@ public class Prototype extends OpMode {
             beltPosition=.5;
         }
         if (gamepad2.y){
-            camleftPosition= camleftPosition + camleftChange;
-            camrightPosition=camrightPosition + camrightChange;
+            camleftPosition= camleftPosition + .9;
+            camrightPosition=camrightPosition + .9;
         }
         if (gamepad2.a){
             camleftPosition = camleftPosition - camleftChange;
-            camrightPosition= camrightPosition - camrightChange;
+            camrightPosition= camrightPosition -camleftChange;
         }
         leftPosition = Range.clip(leftPosition, LEFT_MIN_RANGE, LEFT_MAX_RANGE);
         rightPosition = Range.clip(rightPosition, RIGHT_MIN_RANGE, RIGHT_MAX_RANGE);
         beltPosition = Range.clip(beltPosition, BELT_MIN_RANGE, BELT_MAX_RANGE);
-        camleftPosition = Range.clip (camleftPosition, CAMLEFT_MIN_RANGE, CAMRIGHT_MAX_RANGE);
+        camleftPosition = Range.clip (camleftPosition, CAMLEFT_MIN_RANGE, CAMLEFT_MAX_RANGE);
         camrightPosition = Range.clip (camrightPosition, CAMRIGHT_MIN_RANGE, CAMRIGHT_MAX_RANGE);
 
         left.setPosition(leftPosition);
