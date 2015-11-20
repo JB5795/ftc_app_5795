@@ -66,7 +66,7 @@ public class FtcOpModeRegister implements OpModeRegister {
     manager.register ("PrototypeAutoTest", PrototypeAutoTest.class);
     manager.register ("PrototypeAutoTest_2", PrototypeAutoTest_2.class);
     manager.register ("PrototypeAutoV3", PrototypeAutoV3.class);
-
+    manager.register ("Sponges", Sponges.class);
 
 
     /*
