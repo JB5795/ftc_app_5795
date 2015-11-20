@@ -60,6 +60,7 @@ public class Prototype extends OpMode {
         camrightPosition=.3; //edit
     }
 
+
     public void loop () {
         fright.setPower(-gamepad1.right_stick_y);
         bright.setPower(-gamepad1.right_stick_y);
