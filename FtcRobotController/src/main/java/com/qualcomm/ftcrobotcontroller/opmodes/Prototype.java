@@ -11,9 +11,13 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 public class Prototype extends OpMode {
 
     DcMotor fright;
-    DcMotor bright;
+//    DcMotor bright;
     DcMotor fleft;
+<<<<<<< HEAD
+//    DcMotor bleft;
+=======
     DcMotor bleft;
+>>>>>>> origin/master
     DcMotor sponge;
     Servo left;
     Servo right;
@@ -32,7 +36,7 @@ public class Prototype extends OpMode {
     double camrightChange=.1;
     double BELTChange=.1;
     final static double LEFT_MIN_RANGE  = .30;
-    final static double LEFT_MAX_RANGE  = 0.95;
+    final static double LEFT_MAX_RANGE  = 0.85;
     final static double RIGHT_MIN_RANGE  = 0.22;
     final static double RIGHT_MAX_RANGE  = 0.85;
     final static double BELT_MIN_RANGE  = 0.20;
@@ -44,9 +48,13 @@ public class Prototype extends OpMode {
 
     public void init (){
         fright = hardwareMap.dcMotor.get("fright");
-        bright = hardwareMap.dcMotor.get("bright");
+//        bright = hardwareMap.dcMotor.get("bright");
         fleft = hardwareMap.dcMotor.get("fleft");
+<<<<<<< HEAD
+//        bleft = hardwareMap.dcMotor.get("bleft");
+=======
         bleft = hardwareMap.dcMotor.get("bleft");
+>>>>>>> origin/master
         sponge=hardwareMap.dcMotor.get("sponge");
         left= hardwareMap.servo.get("left");
         right=hardwareMap.servo.get("right");
@@ -56,17 +64,31 @@ public class Prototype extends OpMode {
         leftPosition=.9;
         rightPosition=.1;
         beltPosition=.5;
+<<<<<<< HEAD
+        camleftPosition= .5;
+        camrightPosition=.5;
+=======
         camleftPosition= 0;
+<<<<<<< HEAD
         camrightPosition=.9;
+=======
+        //camrightPosition=.9;
+>>>>>>> origin/master
+>>>>>>> origin/master
     }
 
 
     public void loop () {
         fright.setPower(-gamepad1.right_stick_y);
-        bright.setPower(-gamepad1.right_stick_y);
+//        bright.setPower(-gamepad1.right_stick_y);
         fleft.setPower(gamepad1.left_stick_y);
+<<<<<<< HEAD
+//        bleft.setPower(gamepad1.left_stick_y);
+         sponge.setPower(gamepad2.left_stick_y);
+=======
         bleft.setPower(gamepad1.left_stick_y);
         sponge.setPower(gamepad2.left_stick_y);
+>>>>>>> origin/master
         if (gamepad2.dpad_left) {
             leftPosition += leftChange;
         }
