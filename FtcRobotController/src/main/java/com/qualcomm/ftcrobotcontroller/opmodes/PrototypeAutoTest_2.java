@@ -42,22 +42,16 @@ public class PrototypeAutoTest_2 extends OpMode {
 
         fright.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
 
+        fright.setTargetPosition(targetPosition);
+
+        if(fright.getCurrentPosition()<targetPosition) {
+            fright.setPower(1);
+            fleft.setPower(1);
+        }
+        fright.setChannelMode(DcMotorController.RunMode.RUN_TO_POSITION);
+
     }
         public void loop(){                 //While start button is pressed (until stopped)
-            fright.setTargetPosition(targetPosition);
-
-            if(fright.getCurrentPosition()<targetPosition) {
-                bright.setPower(1);
-                bleft.setPower(1);
-                fright.setPower(1);
-                fleft.setPower(1);
-            }
-            fright.setChannelMode(DcMotorController.RunMode.RUN_TO_POSITION);
-
-            fright.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
-
-
-
 
         }
 }
