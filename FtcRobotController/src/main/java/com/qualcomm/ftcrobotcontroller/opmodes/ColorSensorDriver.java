@@ -117,7 +117,6 @@ public class ColorSensorDriver extends LinearOpMode {
         break;
       case MODERN_ROBOTICS_I2C:
         colorSensor.enableLed(value);
-        break;
+        break;}
     }
   }
-}

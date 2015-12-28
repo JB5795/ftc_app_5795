@@ -1,15 +1,12 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
-
-        import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-        import com.qualcomm.robotcore.hardware.DcMotor;
-        import com.qualcomm.robotcore.hardware.Servo;
-        import com.qualcomm.robotcore.util.Range;
-
+    import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+    import com.qualcomm.robotcore.hardware.DcMotor;
+    import com.qualcomm.robotcore.hardware.Servo;
+    import com.qualcomm.robotcore.util.Range;
 /**
- * Created by jboerger on 10/2/2015.
+ * Created by hunai on 12/28/2015.
  */
-public class Prototype extends OpMode {
-
+public class Prototype_ArcadeDrive extends OpMode{
     DcMotor fright;
     DcMotor bright;
     DcMotor fleft;
@@ -62,11 +59,23 @@ public class Prototype extends OpMode {
 
 
     public void loop () {
-        fright.setPower(-gamepad1.right_stick_y);
-        bright.setPower(-gamepad1.right_stick_y);
-        fleft.setPower(gamepad1.left_stick_y);
-        bleft.setPower(gamepad1.left_stick_y);
+//        fright.setPower(-gamepad1.right_stick_y);
+//        bright.setPower(-gamepad1.right_stick_y);
+        fleft.setPower(gamepad1.left_stick_x);
+        bleft.setPower(gamepad1.left_stick_x);
         sponge.setPower(gamepad2.left_stick_y);
+        while(gamepad1.right_stick_y>0) {
+            fright.setPower(-1);
+            bright.setPower(-1);
+            fleft.setPower(1);
+            bleft.setPower(1);
+        }
+        while(gamepad1.right_stick_y<0) {
+            fright.setPower(1);
+            bright.setPower(1);
+            fleft.setPower(-1);
+            bleft.setPower(-1);
+        }
         if (gamepad2.dpad_left) {
             leftPosition += leftChange;
         }
@@ -123,4 +132,3 @@ public class Prototype extends OpMode {
 
     }
 }
-
