@@ -13,11 +13,9 @@ public class Prototype extends OpMode {
     DcMotor fright;
 //    DcMotor bright;
     DcMotor fleft;
-<<<<<<< HEAD
 //    DcMotor bleft;
-=======
-    DcMotor bleft;
->>>>>>> origin/master
+
+
     DcMotor sponge;
     Servo left;
     Servo right;
@@ -50,11 +48,10 @@ public class Prototype extends OpMode {
         fright = hardwareMap.dcMotor.get("fright");
 //        bright = hardwareMap.dcMotor.get("bright");
         fleft = hardwareMap.dcMotor.get("fleft");
-<<<<<<< HEAD
+
 //        bleft = hardwareMap.dcMotor.get("bleft");
-=======
-        bleft = hardwareMap.dcMotor.get("bleft");
->>>>>>> origin/master
+
+
         sponge=hardwareMap.dcMotor.get("sponge");
         left= hardwareMap.servo.get("left");
         right=hardwareMap.servo.get("right");
@@ -64,17 +61,11 @@ public class Prototype extends OpMode {
         leftPosition=.9;
         rightPosition=.1;
         beltPosition=.5;
-<<<<<<< HEAD
         camleftPosition= .5;
         camrightPosition=.5;
-=======
         camleftPosition= 0;
-<<<<<<< HEAD
-        camrightPosition=.9;
-=======
+        //camrightPosition=.1
         //camrightPosition=.9;
->>>>>>> origin/master
->>>>>>> origin/master
     }
 
 
@@ -82,13 +73,13 @@ public class Prototype extends OpMode {
         fright.setPower(-gamepad1.right_stick_y);
 //        bright.setPower(-gamepad1.right_stick_y);
         fleft.setPower(gamepad1.left_stick_y);
-<<<<<<< HEAD
+
 //        bleft.setPower(gamepad1.left_stick_y);
          sponge.setPower(gamepad2.left_stick_y);
-=======
-        bleft.setPower(gamepad1.left_stick_y);
+
+
         sponge.setPower(gamepad2.left_stick_y);
->>>>>>> origin/master
+
         if (gamepad2.dpad_left) {
             leftPosition += leftChange;
         }

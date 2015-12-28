@@ -41,9 +41,7 @@ public class Prototype_ArcadeDrive extends OpMode{
 
     public void init (){
         fright = hardwareMap.dcMotor.get("fright");
-        bright = hardwareMap.dcMotor.get("bright");
         fleft = hardwareMap.dcMotor.get("fleft");
-        bleft = hardwareMap.dcMotor.get("bleft");
         sponge=hardwareMap.dcMotor.get("sponge");
         left= hardwareMap.servo.get("left");
         right=hardwareMap.servo.get("right");
@@ -59,22 +57,15 @@ public class Prototype_ArcadeDrive extends OpMode{
 
 
     public void loop () {
-//        fright.setPower(-gamepad1.right_stick_y);
-//        bright.setPower(-gamepad1.right_stick_y);
         fleft.setPower(gamepad1.left_stick_x);
-        bleft.setPower(gamepad1.left_stick_x);
         sponge.setPower(gamepad2.left_stick_y);
-        while(gamepad1.right_stick_y>0) {
+        if(gamepad1.right_stick_y>0) {
             fright.setPower(-1);
-            bright.setPower(-1);
             fleft.setPower(1);
-            bleft.setPower(1);
         }
-        while(gamepad1.right_stick_y<0) {
+        if(gamepad1.right_stick_y<0) {
             fright.setPower(1);
-            bright.setPower(1);
             fleft.setPower(-1);
-            bleft.setPower(-1);
         }
         if (gamepad2.dpad_left) {
             leftPosition += leftChange;

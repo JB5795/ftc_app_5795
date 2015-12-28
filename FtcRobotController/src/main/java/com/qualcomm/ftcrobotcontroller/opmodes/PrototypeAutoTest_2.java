@@ -10,48 +10,50 @@ import com.qualcomm.robotcore.hardware.Servo;
  */
 public class PrototypeAutoTest_2 extends OpMode {
     DcMotor fright;
-    DcMotor bright;
     DcMotor fleft;
-    DcMotor bleft;
     Servo left;
     Servo right;
     Servo belt;
-    int targetPosition=1120;
+    Servo camright;
+    Servo camleft;
 
     final static int ENCODER_CPR = 1120;    //encoder counts per revolution
     final static double GEAR_RATIO = 2;     //gear ratio
     final static int WHEEL_DIAMETER = 4;    //diameter of wheel in inches
-    static double DISTANCE;                 //distance to drive in inches
+    static double DISTANCE=52;                 //distance to drive in inches
 
     final static double CIRCUMFERENCE = Math.PI * WHEEL_DIAMETER; //calculates circumference
     final static double ROTATIONS = DISTANCE/CIRCUMFERENCE;       //calculates rotations needed
     final static double COUNTS = ENCODER_CPR*ROTATIONS*GEAR_RATIO;//calculates encoder counts needed
-
+    final static int finalCount=(int)Math.round(COUNTS);
     public void init() {
 
         fright = hardwareMap.dcMotor.get("fright");
-        bright = hardwareMap.dcMotor.get("bright");
         fleft = hardwareMap.dcMotor.get("fleft");
-        bleft = hardwareMap.dcMotor.get("bleft");
         left=hardwareMap.servo.get("left");
         right=hardwareMap.servo.get("right");
         belt=hardwareMap.servo.get("belt");
+        camright=hardwareMap.servo.get("camright");
+        camleft=hardwareMap.servo.get("camleft");
 
         fright.setDirection(DcMotor.Direction.REVERSE);
-        bright.setDirection(DcMotor.Direction.REVERSE);
+        fleft.setDirection(DcMotor.Direction.REVERSE);
 
-        fright.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
-
-        fright.setTargetPosition(targetPosition);
-
-        if(fright.getCurrentPosition()<targetPosition) {
-            fright.setPower(1);
-            fleft.setPower(1);
+        fright.setMode(DcMotorController.RunMode.RESET_ENCODERS);
+        fleft.setMode(DcMotorController.RunMode.RESET_ENCODERS);
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-        fright.setChannelMode(DcMotorController.RunMode.RUN_TO_POSITION);
 
     }
         public void loop(){                 //While start button is pressed (until stopped)
-
+            telemetry.addData("Encdright:",fright.getCurrentPosition());
+            telemetry.addData("Encdleft:",fleft.getCurrentPosition());
+            fright.setMode(DcMotorController.RunMode.RUN_TO_POSITION);
+            fright.setTargetPosition(finalCount);
+            fleft.setMode(DcMotorController.RunMode.RUN_TO_POSITION);
+            fleft.setTargetPosition(finalCount);
         }
 }
