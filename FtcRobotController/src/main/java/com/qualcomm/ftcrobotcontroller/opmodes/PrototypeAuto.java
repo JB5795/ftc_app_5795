@@ -9,9 +9,8 @@ import com.qualcomm.robotcore.hardware.DcMotorController;
  */
 public class PrototypeAuto extends LinearOpMode {
     DcMotor fright;
-    DcMotor bright;
     DcMotor fleft;
-    DcMotor bleft;
+
 
     final static int ENCODER_CPR = 1440;    //encoder counts per revolution
     final static double GEAR_RATIO = 2;     //gear ratio
@@ -25,84 +24,84 @@ public class PrototypeAuto extends LinearOpMode {
     public void drive(int DISTANCE, double power){
         this.DISTANCE = DISTANCE;
         fright.setTargetPosition((int) COUNTS);
-        bright.setTargetPosition((int) COUNTS);
+
         fleft.setTargetPosition((int) COUNTS);
-        bleft.setTargetPosition((int) COUNTS);
+
 
         fright.setChannelMode(DcMotorController.RunMode.RUN_TO_POSITION);
-        bright.setChannelMode(DcMotorController.RunMode.RUN_TO_POSITION);
+
         fleft.setChannelMode(DcMotorController.RunMode.RUN_TO_POSITION);
-        bleft.setChannelMode(DcMotorController.RunMode.RUN_TO_POSITION);
+
 
         fright.setPower(power);
-        bright.setPower(power);
+
         fleft.setPower(power);
-        bleft.setPower(power);
+
 
         fright.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
-        bright.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
+
         fleft.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
-        bleft.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
+
 
     }
     public void turnR(int DISTANCE, double power){
         this.DISTANCE = DISTANCE;
         fright.setTargetPosition((int) -COUNTS);
-        bright.setTargetPosition((int) -COUNTS);
+
         fleft.setTargetPosition((int) COUNTS);
-        bleft.setTargetPosition((int) COUNTS);
+
 
         fright.setChannelMode(DcMotorController.RunMode.RUN_TO_POSITION);
-        bright.setChannelMode(DcMotorController.RunMode.RUN_TO_POSITION);
+
         fleft.setChannelMode(DcMotorController.RunMode.RUN_TO_POSITION);
-        bleft.setChannelMode(DcMotorController.RunMode.RUN_TO_POSITION);
+
 
         fright.setPower(-power);
-        bright.setPower(-power);
+
         fleft.setPower(power);
-        bleft.setPower(power);
+
 
         fright.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
-        bright.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
+
         fleft.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
-        bleft.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
+
     }
     public void turnL(int DISTANCE, double power){
         this.DISTANCE = DISTANCE;
         fright.setTargetPosition((int) COUNTS);
-        bright.setTargetPosition((int) COUNTS);
+
         fleft.setTargetPosition((int) -COUNTS);
-        bleft.setTargetPosition((int) -COUNTS);
+
 
         fright.setChannelMode(DcMotorController.RunMode.RUN_TO_POSITION);
-        bright.setChannelMode(DcMotorController.RunMode.RUN_TO_POSITION);
+//        bright.setChannelMode(DcMotorController.RunMode.RUN_TO_POSITION);
         fleft.setChannelMode(DcMotorController.RunMode.RUN_TO_POSITION);
-        bleft.setChannelMode(DcMotorController.RunMode.RUN_TO_POSITION);
+//        bleft.setChannelMode(DcMotorController.RunMode.RUN_TO_POSITION);
 
         fright.setPower(power);
-        bright.setPower(power);
+//        bright.setPower(power);
         fleft.setPower(-power);
-        bleft.setPower(-power);
+//        bleft.setPower(-power);
 
         fright.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
-        bright.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
+//        bright.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
         fleft.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
-        bleft.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
+//        bleft.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
     }
     @Override
     public void runOpMode() throws InterruptedException {
         fright = hardwareMap.dcMotor.get("fright");
-        bright = hardwareMap.dcMotor.get("bright");
+//        bright = hardwareMap.dcMotor.get("bright");
         fleft = hardwareMap.dcMotor.get("fleft");
-        bleft = hardwareMap.dcMotor.get("bleft");
+//        bleft = hardwareMap.dcMotor.get("bleft");
 
         fright.setDirection(DcMotor.Direction.REVERSE);
-        bright.setDirection(DcMotor.Direction.REVERSE);
+//        bright.setDirection(DcMotor.Direction.REVERSE);
 
         fright.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
-        bright.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
+//        bright.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
         fleft.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
-        bleft.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
+//        bleft.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
 
         waitForStart();
 
@@ -121,8 +120,10 @@ public class PrototypeAuto extends LinearOpMode {
         fleft.setPower(.5);
 
 
-//        drive(24,.5);
-
+        drive(24,.5);
+        turnR(10,.5);
+        drive(6,.5);
+        turnL(10,.5);
 
 
     }

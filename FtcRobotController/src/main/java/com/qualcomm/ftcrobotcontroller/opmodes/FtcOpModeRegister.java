@@ -58,18 +58,14 @@ public class FtcOpModeRegister implements OpModeRegister {
     manager.register("NullOp", NullOp.class);
 
     //manager.register("MatrixK9TeleOp", MatrixK9TeleOp.class);
-    manager.register("K9TeleOp", K9TeleOp.class);
-    manager.register("K9Line", K9Line.class);
-    manager.register ("PushBotAuto", PushBotAuto.class);
-    manager.register ("PushBotManual", PushBotManual.class);
+
     manager.register ("Prototype", Prototype.class);
-    manager.register ("PrototypeAutoTest", PrototypeAutoTest.class);
-    manager.register ("PrototypeAutoTest_2", PrototypeAutoTest_2.class);
-    manager.register ("PrototypeAutoV3", PrototypeAutoV3.class);
-    manager.register ("Sponges", Sponges.class);
-    manager.register("camrightservotest", camrightservotest.class);
     manager.register("Prototype_ArcadeDrive", Prototype_ArcadeDrive.class);
-    manager.register("m1", m1.class);
+    manager.register ("Auto1 Mountain", Basic_Auto1_Mountain.class);
+    manager.register ("Auto2 Other Mountain", Basic_Auto2_OtherMountain.class);
+    manager.register ("Auto3 Beacon OtherMountain", Basic_Auto3_Beacon_OtherMountain.class);
+    manager.register ("Auto4 Floor Mountain", Basic_Auto4_Floor_Mountain.class);
+    manager.register ("Auto5 Beacon Mountain", Basic_Auto5_Beacon_Mountain.class);
 
 
     /*

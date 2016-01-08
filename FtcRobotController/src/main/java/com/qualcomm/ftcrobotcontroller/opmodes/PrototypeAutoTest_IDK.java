@@ -15,7 +15,7 @@ import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
 /**
  * Created by hunai on 12/11/2015.
  */
-public class PrototypeAutoTest_5 extends LinearOpMode{
+public class PrototypeAutoTest_IDK extends LinearOpMode{
     DcMotor fright;
     DcMotor bright;
     DcMotor fleft;

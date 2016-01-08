@@ -37,7 +37,7 @@ public class PrototypeAutoTest_2 extends OpMode {
         camleft=hardwareMap.servo.get("camleft");
 
         fright.setDirection(DcMotor.Direction.REVERSE);
-        fleft.setDirection(DcMotor.Direction.REVERSE);
+        fleft.setDirection(DcMotor.Direction.REVERSE);//Why are both reversed??
 
         fright.setMode(DcMotorController.RunMode.RESET_ENCODERS);
         fleft.setMode(DcMotorController.RunMode.RESET_ENCODERS);
@@ -49,8 +49,8 @@ public class PrototypeAutoTest_2 extends OpMode {
 
     }
         public void loop(){                 //While start button is pressed (until stopped)
-            telemetry.addData("Encdright:",fright.getCurrentPosition());
-            telemetry.addData("Encdleft:",fleft.getCurrentPosition());
+            telemetry.addData("Encdright:",fright.getCurrentPosition()+"proto2");
+            telemetry.addData("Encdleft:",fleft.getCurrentPosition()+"proto2");
             fright.setMode(DcMotorController.RunMode.RUN_TO_POSITION);
             fright.setTargetPosition(finalCount);
             fleft.setMode(DcMotorController.RunMode.RUN_TO_POSITION);
