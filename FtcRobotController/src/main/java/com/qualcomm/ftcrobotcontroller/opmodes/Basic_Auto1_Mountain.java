@@ -25,6 +25,8 @@ public class Basic_Auto1_Mountain extends LinearOpMode {
         return COUNTS;
     }
 
+
+
     @Override
     public void runOpMode() throws InterruptedException {
         R = hardwareMap.dcMotor.get("R");
@@ -41,7 +43,7 @@ public class Basic_Auto1_Mountain extends LinearOpMode {
         while(L.getCurrentPosition()<Counts(50)){
             R.setPower(.5);
             L.setPower(.5);
-            telemetry.addData("Inches: ", DISTANCE +"Counts: "+Counts(38));
+            telemetry.addData("Inches: ", DISTANCE +"Counts: "+Counts(50));
             telemetry.addData("Right Enc: ", R.getCurrentPosition());
             telemetry.addData("Left Enc: ",L.getCurrentPosition());
             waitOneFullHardwareCycle();
@@ -49,10 +51,10 @@ public class Basic_Auto1_Mountain extends LinearOpMode {
         R.setPower(0);
         L.setPower(0);
 
-        while(L.getCurrentPosition()>Counts(38)-Counts(2)){
+        while(L.getCurrentPosition()>Counts(50)-Counts(6)){
             R.setPower(-.5);
             L.setPower(-.5);
-            telemetry.addData("Inches: ", DISTANCE +"Counts: "+Counts(45));
+            telemetry.addData("Inches: ", DISTANCE +"Counts: "+Counts(44));
             telemetry.addData("Right Enc: ", R.getCurrentPosition());
             telemetry.addData("Left Enc: ",L.getCurrentPosition());
             waitOneFullHardwareCycle();
@@ -60,10 +62,10 @@ public class Basic_Auto1_Mountain extends LinearOpMode {
         R.setPower(0);
         L.setPower(0);
 
-        while(L.getCurrentPosition()>Counts(32)-Counts(15.5)){
+        while(L.getCurrentPosition()>Counts(44)-Counts(13)){
             R.setPower(.5);
             L.setPower(-.5);
-            telemetry.addData("Inches: ", DISTANCE +"Counts: "+Counts(32));
+            telemetry.addData("Inches: ", DISTANCE +"Counts: "+Counts(31));
             telemetry.addData("Right Enc: ", R.getCurrentPosition());
             telemetry.addData("Left Enc: ",L.getCurrentPosition());
             waitOneFullHardwareCycle();
@@ -71,10 +73,10 @@ public class Basic_Auto1_Mountain extends LinearOpMode {
         R.setPower(0);
         L.setPower(0);
 
-        while(L.getCurrentPosition()<Counts(19)+Counts(18)){
+        while(L.getCurrentPosition()<Counts(31)+Counts(35)){
             R.setPower(.5);
             L.setPower(.5);
-            telemetry.addData("Inches: ", DISTANCE + "Counts: " + Counts(14));
+            telemetry.addData("Inches: ", DISTANCE + "Counts: " + Counts(66));
             telemetry.addData("Right Enc: ", R.getCurrentPosition());
             telemetry.addData("Left Enc: ",L.getCurrentPosition());
             waitOneFullHardwareCycle();
