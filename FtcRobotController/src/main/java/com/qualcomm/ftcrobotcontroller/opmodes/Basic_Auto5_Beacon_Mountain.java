@@ -1,8 +1,8 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorController;
+        import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+        import com.qualcomm.robotcore.hardware.DcMotor;
+        import com.qualcomm.robotcore.hardware.DcMotorController;
 
 /**
  * Created by jboerger on 10/24/2015.
@@ -40,7 +40,7 @@ public class Basic_Auto5_Beacon_Mountain extends LinearOpMode {
 
         waitForStart();
 
-        while(R.getCurrentPosition() < Counts(50)){
+        while(R.getCurrentPosition() < Counts(91)){
             R.setPower(.5);
             L.setPower(.5);
             telemetry.addData("Inches: ", DISTANCE + "Counts: " + Counts(50));
@@ -51,7 +51,7 @@ public class Basic_Auto5_Beacon_Mountain extends LinearOpMode {
         R.setPower(0);
         L.setPower(0);
 
-        while(R.getCurrentPosition() < Counts(10)+ Counts(50)){
+        while(R.getCurrentPosition() < Counts(10)+ Counts(71)){
             R.setPower(.5);
             L.setPower(-.5);
             telemetry.addData("Inches: ", DISTANCE + "Counts: " + Counts(60));
@@ -62,7 +62,7 @@ public class Basic_Auto5_Beacon_Mountain extends LinearOpMode {
         R.setPower(0);
         L.setPower(0);
 
-        while(R.getCurrentPosition() < Counts(10)+ Counts(60)){
+        while(R.getCurrentPosition() < Counts(20)+ Counts(81)){
             R.setPower(.5);
             L.setPower(.5);
             telemetry.addData("Inches: ", DISTANCE +"Counts: "+Counts(70));
@@ -73,7 +73,7 @@ public class Basic_Auto5_Beacon_Mountain extends LinearOpMode {
         R.setPower(0);
         L.setPower(0);
 //At Beacon
-        while(R.getCurrentPosition() > Counts(70)-Counts(30)){
+        while(R.getCurrentPosition() > Counts(101)-Counts(30)){
             R.setPower(-.5);
             L.setPower(-.5);
             telemetry.addData("Inches: ", DISTANCE +"Counts: "+Counts(40));
@@ -84,7 +84,7 @@ public class Basic_Auto5_Beacon_Mountain extends LinearOpMode {
         R.setPower(0);
         L.setPower(0);
 //Should it turn before reversing
-        while(R.getCurrentPosition() < Counts(60)+Counts(13)){
+        while(R.getCurrentPosition() < Counts(71)+Counts(13)){
             R.setPower(.5);
             L.setPower(-.5);
             telemetry.addData("Inches: ", DISTANCE +"Counts: "+Counts(63));
@@ -95,7 +95,7 @@ public class Basic_Auto5_Beacon_Mountain extends LinearOpMode {
         R.setPower(0);
         L.setPower(0);
 
-        while(R.getCurrentPosition() < Counts(73)+Counts(47)){
+        while(R.getCurrentPosition() < Counts(84)+Counts(47)){
             R.setPower(.5);
             L.setPower(.5);
             telemetry.addData("Inches: ", DISTANCE +"Counts: "+Counts(120));

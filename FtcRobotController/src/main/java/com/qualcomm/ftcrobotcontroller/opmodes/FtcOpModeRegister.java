@@ -66,6 +66,7 @@ public class FtcOpModeRegister implements OpModeRegister {
     manager.register ("Auto3 Beacon OtherMountain", Basic_Auto3_Beacon_OtherMountain.class);
     manager.register ("Auto4 Floor Mountain", Basic_Auto4_Floor_Mountain.class);
     manager.register ("Auto5 Beacon Mountain", Basic_Auto5_Beacon_Mountain.class);
+    manager.register("K9",Jordans_K9.class);
 
 
     /*
